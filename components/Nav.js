@@ -27,6 +27,7 @@ const Nav = () => (
 
           .menu {
             height: ${navHeight};
+            font-size: 3rem;
             line-height: ${navHeight};
           }
 
