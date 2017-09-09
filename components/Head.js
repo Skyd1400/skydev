@@ -14,6 +14,22 @@ const SkyHead = () => (
             section {
                 padding: 100px 0;
             }
+
+            #page-content {
+                padding: 40px 0;
+            }
+
+            @media (min-width: 550px) {
+                #page-content {
+                padding: 80px 0;
+                }
+            }
+
+            @media (min-width: 1000px) {
+                #page-content {
+                padding: 100px 0;
+                }
+            }
         `}</style>
     </Head>
 );

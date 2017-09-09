@@ -41,6 +41,7 @@ const Hero = () => (
                 color: #fff;
                 font-weight: 400;
                 text-align: center;
+                margin:0;
             }
         `}</style>
     </section>

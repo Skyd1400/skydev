@@ -1,12 +1,14 @@
 import Link from 'next/link';
 
-const navHeight = '56px';
+const navHeight = 56;
 
 const Nav = () => (
     <nav className="cf">
         <div className="container">
             <a className="menu mdi mdi-menu mdi-24 dn-m"></a>
-            <div className="logo"></div>
+            <div className="logo">
+                <Link href="/"><a><img src="./static/img/logo.png"/></a></Link>
+            </div>
             <ul className="nav">
                 <li><Link href="/"><a>Home</a></Link></li>
                 <li><Link href="/blog"><a>Blog</a></Link></li>
@@ -21,18 +23,30 @@ const Nav = () => (
         {/*language=SCSS*/}
         <style jsx>{`
           nav {
-            height: ${navHeight};
+            height: ${navHeight}px;
             border-bottom: 4px solid #3c999c;
           }
 
           .menu {
-            height: ${navHeight};
+            float:left;
+            height: ${navHeight}px;
             font-size: 3rem;
-            line-height: ${navHeight};
+            line-height: ${navHeight}px;
           }
 
           .logo {
-            position: absolute;
+          position: absolute;
+          top: 4px;
+          left: 50%;
+            width: auto;
+            margin: 0 auto;
+            margin-left: -21.5px;
+            text-align: center;
+          }
+
+          .logo img {
+            width: auto;
+            height: ${navHeight - 8}px;
           }
 
 
@@ -53,6 +67,12 @@ const Nav = () => (
                 display: none;
               }
 
+              .logo {
+                position:static;
+                float:left;
+                margin-top: 4px;
+              }
+
               .nav li {
                 display: inline-block;
                 margin: 0;
@@ -61,8 +81,8 @@ const Nav = () => (
               .nav li a {
                 display: block;
                 color:#3c999c;
-                height: ${navHeight};
-                line-height: ${navHeight};
+                height: ${navHeight}px;
+                line-height: ${navHeight}px;
                 text-decoration: none;
                 text-transform: uppercase;
               }
