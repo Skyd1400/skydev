@@ -5,7 +5,7 @@ const Hero = () => (
                 <img src="./static/img/profile.jpg"/>
             </div>
             <h1 className="brand-name">Skydev</h1>
-            <h3 className="brand-motto">What you need is what we do</h3>
+            <h3 className="brand-motto">What you need is what I do</h3>
         </div>
         {/*language=CSS*/}
         <style jsx>{`
@@ -34,12 +34,13 @@ const Hero = () => (
                 font-weight: 600;
                 text-align: center;
                 margin-bottom: .2rem;
+                text-transform: uppercase;
             }
 
             .brand-motto {
                 font-size: 18px;
                 color: #fff;
-                font-weight: 400;
+                font-weight: normal;
                 text-align: center;
                 margin:0;
             }

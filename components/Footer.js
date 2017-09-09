@@ -1,7 +1,7 @@
 const Footer = () => (
     <footer>
         <div className="container">
-            <h5>Stay connected</h5>
+            <h5>Let's connect !</h5>
             <ul className="social-links">
                 <li><a className="mdi mdi-linkedin-box"></a></li>
                 <li><a className="mdi mdi-facebook-box"></a></li>
@@ -14,7 +14,7 @@ const Footer = () => (
             footer {
                 background-color: #444;
                 color: white;
-                padding: 50px 0;
+                padding: 50px 0 20px;
             }
 
             a {

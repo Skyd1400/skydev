@@ -1,7 +1,7 @@
 const Services = () => (
     <section className="root">
         <div className="container">
-            <h1 className="section-title">Our Services</h1>
+            <h1 className="section-title">What can I do for you ?</h1>
             <ul>
                 <li>UI Design</li>
                 <li>UX Design</li>
