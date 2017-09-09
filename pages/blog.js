@@ -4,18 +4,21 @@ import Nav from "../components/Nav";
 import PostCard from "../components/blog/PostCard";
 import Footer from "../components/Footer";
 
+import { Service } from '../config';
+
 class Blog extends React.Component {
 
-    static async getInitialProps() {
+    static async getInitialProps({ req }) {
+        let posts = await Service.getPosts(req);
         return {
-            posts: [{}, {}, {}]
+            posts
         };
     }
 
     renderBlogList() {
         let posts = this.props.posts || [];
         return posts.map(post => (
-            <PostCard/>
+            <PostCard {...post}/>
         ))
     }
 
@@ -35,12 +38,17 @@ class Blog extends React.Component {
                 <Footer />
                 {/*language=CSS*/}
                 <style jsx>{`
+                    .container {
+                        max-width: 750px;
+                    }
                     header {
-                        background-color: #eee;
+                        background-color: #3c999c;
+                        background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.21' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
                         padding: 50px;
                     }
 
                     .title {
+                        color: #fff;
                         text-align: center;
                         margin: 0;
                     }

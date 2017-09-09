@@ -1,18 +1,15 @@
 import Link from 'next/link';
 
-const PostCard = () => (
-    <article className="root">
+const PostCard = (props) => (
+    <article className="root clearfix">
         <div className="media">
-            <img src="./static/img/blog1.jpg"/>
+            <img src={props.thumbnail} />
         </div>
         <div className="info">
-            <p className="date"><i className="mdi mdi-calendar"></i> 20 January 2016</p>
-            <h3 className="title">Nextjs : Yon gid pou demare</h3>
-            <h5 className="author">Skydev</h5>
-            <p className="except">Voluptate illum dolore ita ipsum, quid deserunt singulis, labore admodum ita multos
-                malis ea nam nam tamen fore amet. Vidisse quid incurreret ut ut possumus transferrem si ita labore dolor
-                si appellat...</p>
-            <Link href="/post"><a className="button">Read More...</a></Link>
+            <p className="date"><i className="mdi mdi-calendar"></i>{ props.pubDate }</p>
+            <h3 className="title">{ props.title }</h3>
+            <h5 className="author">{ props.author }</h5>
+            <Link href="/post"><a className="read-more button">Read More...</a></Link>
         </div>
         {/*language=CSS*/}
         <style jsx>{`
@@ -22,9 +19,17 @@ const PostCard = () => (
                 box-shadow: 0 8px 10px 0px #0003;
             }
 
+            /*.media {
+                background-position: center top;
+                background-size: cover;
+                height: 100%;
+            }
+            */
+
             .media img {
                 width: 100%;
                 height: auto;
+                vertical-align: bottom;
             }
 
             .info {
@@ -46,10 +51,21 @@ const PostCard = () => (
                 margin-bottom: 3.5;
             }
 
+            .read-more {
+                margin: 0;
+            }
+
             @media (min-width: 750px) {
-                .info {
-                    padding: 40px;
+                /*.media {
+                    float: left;
+                    width: 38.2716%;
                 }
+                .info {
+                    float: right;
+                    width: 61.7283%;
+                    padding: 20px;
+                    box-sizing: border-box;
+                }*/
             }
         `}</style>
     </article>

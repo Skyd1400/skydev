@@ -24,7 +24,7 @@ const Nav = () => (
         <style jsx>{`
           nav {
             height: ${navHeight}px;
-            border-bottom: 4px solid #3c999c;
+            border-bottom: 4px solid #4dc9cc;
           }
 
           .menu {
@@ -36,17 +36,17 @@ const Nav = () => (
 
           .logo {
           position: absolute;
-          top: 4px;
+          top: 8px;
           left: 50%;
             width: auto;
             margin: 0 auto;
-            margin-left: -21.5px;
+            margin-left: -17.94165px;
             text-align: center;
           }
 
           .logo img {
             width: auto;
-            height: ${navHeight - 8}px;
+            height: ${navHeight - 16}px;
           }
 
 
@@ -70,7 +70,7 @@ const Nav = () => (
               .logo {
                 position:static;
                 float:left;
-                margin-top: 4px;
+                margin-top: 8px;
               }
 
               .nav li {

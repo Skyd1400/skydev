@@ -15,6 +15,20 @@ const SkyHead = () => (
                 padding: 100px 0;
             }
 
+            .clearfix {
+                zoom: 1;
+            }
+
+            .clearfix:before, .clearfix:after {
+                content: "\\0020";
+                display: block;
+                overflow: hidden;
+                visibility: hidden;
+                width: 0;
+                height: 0;
+                clear: both;
+            }
+
             #page-content {
                 padding: 40px 0;
             }
