@@ -40,7 +40,6 @@ class Post extends React.Component {
                             <li>Reactjs</li>
                         </ul>   
                         <hr/>
-                        <h5>Share</h5>
                         <ul className="share-buttons">
                             <li><button><i className="mdi mdi-facebook"></i></button></li>
                             <li><button><i className="mdi mdi-twitter"></i></button></li>

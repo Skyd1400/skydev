@@ -4,6 +4,7 @@ import Nav from "../components/Nav";
 import Hero from "../components/home/Hero";
 import AboutMe from "../components/home/AboutMe";
 import Services from "../components/home/Services";
+import Portfolio from "../components/home/Portfolio";
 import Footer from "../components/Footer";
 
 class Index extends React.Component {
@@ -15,6 +16,7 @@ class Index extends React.Component {
                 <Hero />
                 <AboutMe />
                 <Services/>
+                <Portfolio />
                 <Footer />
             </div>
         )
