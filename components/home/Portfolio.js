@@ -1,15 +1,16 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 
-const works = [{}, {}, {}, {}, {}, {}];
 
-const Portfolio = () => (
+const Portfolio = (props) => (
     <section className="root">
         <div className="container">
             <h1 className="section-title">What have I done ?</h1>
             <div className="row portfolio-grid">
-                { works.map(work => (
-                    <div className="four columns">
+                { props.works.map(work => (
+                    <div key={ work.workId } className="four columns">
                         <div className="pf-card">
-                            <img src="./static/img/pf.jpg" />
+                            <img src={work.thumbnail} />
                             <div className="overlay">
                                 <div className="details"><i className="mdi mdi-information-outline"></i> Details</div>
                             </div>
@@ -99,5 +100,9 @@ const Portfolio = () => (
         `}</style>
     </section>
 );
+
+Portfolio.propTypes = {
+    works: PropTypes.array
+};
 
 export default Portfolio;
