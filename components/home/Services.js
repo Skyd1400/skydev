@@ -1,4 +1,10 @@
-const Services = () => (
+import React from 'react';
+
+import { translate } from 'react-i18next';
+import i18n from '../../i18n';
+
+
+const Services = ({ t }) => (
     <section className="root">
         <div className="container">
             <h1 className="section-title">What can I do for you ?</h1>
@@ -38,4 +44,6 @@ const Services = () => (
     </section>
 );
 
-export default Services;
+const Extended = translate(['home'], {i18n, wait: process.browser})(Services);
+
+export default Extended;

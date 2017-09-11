@@ -1,11 +1,16 @@
-const Hero = () => (
+import React from 'react';
+
+import { translate } from 'react-i18next';
+import i18n from '../../i18n';
+
+const Hero = ({ t }) => (
     <section className="hero">
         <div className="container">
             <div className="avatar">
                 <img src="./static/img/profile.jpg"/>
             </div>
             <h1 className="brand-name">Skydev</h1>
-            <h3 className="brand-motto">What you need is what I do</h3>
+            <h3 className="brand-motto">{ t('motto') }</h3>
         </div>
         {/*language=CSS*/}
         <style jsx>{`
@@ -48,4 +53,6 @@ const Hero = () => (
     </section>
 );
 
-export default Hero;
+const Extended = translate('home', {i18n, wait: process.browser})(Hero);
+
+export default Extended;
