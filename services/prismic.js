@@ -27,6 +27,7 @@ export default {
             return new Promise(resolve => {
                 resolve(response.results.map(doc => ({
                     postId: doc.id,
+                    slug: doc.slugs[0],
                     title: doc.data.title,
                     thumbnail: doc.data.thumbnail.url,
                     pubDate: (new Date(doc.last_publication_date)).toLocaleDateString(),

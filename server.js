@@ -39,6 +39,11 @@ i18n
                     server.post('/locales/add/:lng/:ns', i18nextMiddleware.missingKeyHandler(i18n));
         
                     // use next.js
+                    server.get('/blog/p/:id/*', (req, res) => {
+                        const actualPage = '/post';
+                        const queryParams = { id: req.params.id};
+                        app.render(req, res, actualPage, queryParams);
+                    });
                     server.get('*', (req, res) => handle(req, res));
         
                     server.listen(3000, (err) => {

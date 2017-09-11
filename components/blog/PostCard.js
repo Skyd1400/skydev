@@ -7,7 +7,7 @@ const PostCard = (props) => (
         </div>
         <div className="info">
             <p className="date"><i className="mdi mdi-calendar"></i> { props.pubDate }</p>
-            <h3 className="title"><Link href={'/post?id='+ props.postId }><a>{props.title}</a></Link></h3>
+            <h3 className="title"><Link href={'/blog/p/'+ props.postId+ '/' +props.slug }><a>{props.title}</a></Link></h3>
             <h5 className="author">{ props.author }</h5>
             <Link href={'/post?id='+ props.postId }><a className="read-more button">Read More...</a></Link>
         </div>

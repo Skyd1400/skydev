@@ -7,7 +7,7 @@ const Nav = () => (
         <div className="container">
             <a className="menu mdi mdi-menu mdi-24 dn-m"></a>
             <div className="logo">
-                <Link href="/"><a><img src="./static/img/logo.png"/></a></Link>
+                <Link href="/"><a><img src="/static/img/logo.png"/></a></Link>
             </div>
             <ul className="nav">
                 <li><Link href="/"><a>Home</a></Link></li>
