@@ -9,6 +9,7 @@ const i18nextMiddleware = require('i18next-express-middleware');
 const Backend = require('i18next-node-fs-backend');
 const i18n = require('./i18n');
 
+const port = process.env.PORT || 3000;
 // init i18next with serverside settings
 // using i18next-express-middleware
 i18n
@@ -46,10 +47,10 @@ i18n
                     });
                     server.get('*', (req, res) => handle(req, res));
         
-                    server.listen(3000, (err) => {
+                    server.listen(port, (err) => {
                         if (err) throw err;
                         //eslint-disable-next-line no-console
-                        console.log('> Ready on http://localhost:3000');
+                        console.log(`> Ready on http://localhost:${port}`);
                     });
                 });
     
