@@ -4,15 +4,15 @@ import PropTypes from 'prop-types';
 import { translate } from 'react-i18next';
 import i18n from '../i18n';
 
+import { FacebookUrl, GithubUrl} from "../config";
 
 const Footer = ({ t }) => (
     <footer>
         <div className="container">
             <h5>{ t('lets-connect') }</h5>
             <ul className="social-links">
-                <li><a className="mdi mdi-linkedin-box"></a></li>
-                <li><a className="mdi mdi-facebook-box"></a></li>
-                <li><a className="mdi mdi-github-box"></a></li>
+                <li><a href={ FacebookUrl } className="mdi mdi-facebook-box"></a></li>
+                <li><a href={ GithubUrl } className="mdi mdi-github-box"></a></li>
             </ul>
             <p>{ t('copyright') }</p>
         </div>

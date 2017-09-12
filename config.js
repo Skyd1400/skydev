@@ -4,3 +4,5 @@ import PrismicService from './services/prismic';
 let service = process.env.NODE_ENV !== 'production' ? LocalService: PrismicService;
 
 export const Service = service;
+export const FacebookUrl = 'https://web.facebook.com/holy1400';
+export const GithubUrl = 'https://github.com/Skyd1400';
