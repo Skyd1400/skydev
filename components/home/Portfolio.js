@@ -1,13 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { translate } from 'react-i18next';
+import i18n from '../../i18n';
 
-const Portfolio = (props) => (
+
+const Portfolio = ({ works, t}) => (
     <section className="root">
         <div className="container">
-            <h1 className="section-title">What have I done ?</h1>
+            <h1 className="section-title">{ t('work-title') }</h1>
             <div className="row portfolio-grid">
-                { props.works.map(work => (
+                { works.map(work => (
                     <div key={ work.workId } className="four columns">
                         <div className="pf-card">
                             <img src={work.thumbnail} />
@@ -102,7 +105,10 @@ const Portfolio = (props) => (
 );
 
 Portfolio.propTypes = {
-    works: PropTypes.array
+    works: PropTypes.array,
+    t: PropTypes.func
 };
 
-export default Portfolio;
+const Extended =  translate('home', {i18n})(Portfolio);
+
+export default Extended;

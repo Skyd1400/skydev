@@ -1,17 +1,20 @@
+import React from 'react';
 import Link from 'next/link';
+import { translate } from 'react-i18next';
+import i18n from '../i18n';
 
 const navHeight = 56;
 
-const Nav = () => (
-    <nav className="cf">
+const Nav = ({ t }) => (
+    <nav>
         <div className="container">
             <a className="menu mdi mdi-menu mdi-24 dn-m"></a>
             <div className="logo">
                 <Link href="/"><a><img src="/static/img/logo.png"/></a></Link>
             </div>
             <ul className="nav">
-                <li><Link href="/"><a>Home</a></Link></li>
-                <li><Link href="/blog"><a>Blog</a></Link></li>
+                <li><Link href="/"><a>{ t('home') }</a></Link></li>
+                <li><Link href="/blog"><a>{ t('blog') }</a></Link></li>
                 <li>
                     <ul className="social-links">
                         <li><a href="#" className="mdi mdi-facebook"></a></li>
@@ -109,4 +112,7 @@ const Nav = () => (
     </nav>
 );
 
-export default Nav;
+console.log(i18n);
+const Extended = translate('common', {i18n})(Nav);
+
+export default Extended;

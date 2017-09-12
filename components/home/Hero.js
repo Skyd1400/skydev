@@ -53,6 +53,6 @@ const Hero = ({ t }) => (
     </section>
 );
 
-const Extended = translate('home', {i18n, wait: process.browser})(Hero);
+const Extended = translate('home', {i18n})(Hero);
 
 export default Extended;

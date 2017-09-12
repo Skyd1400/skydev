@@ -1,3 +1,11 @@
 {
-    "motto": "What you need is what I do"
+    "motto": "What you need is what I do",
+    "about-title": "Who am I ?",
+    "about-text": "Hello, my name is <strong>Holy-Elie Scaïde</strong> and I'm your Website/App Designer and Developer",
+    "service-title": "What can I do for you",
+    "service-ux": "User Experience Design",
+    "service-ui": "User Interface design",
+    "service-web": "Web Development",
+    "service-mobile": "Mobile Development",
+    "work-title": "What have I done ?"
 }

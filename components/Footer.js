@@ -1,13 +1,20 @@
-const Footer = () => (
+import React from 'react';
+import PropTypes from 'prop-types';
+
+import { translate } from 'react-i18next';
+import i18n from '../i18n';
+
+
+const Footer = ({ t }) => (
     <footer>
         <div className="container">
-            <h5>Let's connect !</h5>
+            <h5>{ t('lets-connect') }</h5>
             <ul className="social-links">
                 <li><a className="mdi mdi-linkedin-box"></a></li>
                 <li><a className="mdi mdi-facebook-box"></a></li>
                 <li><a className="mdi mdi-github-box"></a></li>
             </ul>
-            <p>&copy; Copyright Holy-Elie Scaïde</p>
+            <p>{ t('copyright') }</p>
         </div>
         {/*language=CSS*/}
         <style jsx>{`
@@ -57,4 +64,11 @@ const Footer = () => (
     </footer>
 );
 
-export default Footer;
+Footer.propTypes = {
+    t: PropTypes.func
+};
+
+
+const Extended = translate('common', {i18n})(Footer);
+
+export default Extended;

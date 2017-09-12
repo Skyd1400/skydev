@@ -1,18 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { translate } from 'react-i18next';
 import i18n from '../../i18n';
 
-
 const Services = ({ t }) => (
     <section className="root">
         <div className="container">
-            <h1 className="section-title">What can I do for you ?</h1>
+            <h1 className="section-title">{ t('service-title') }</h1>
             <ul>
-                <li>UI Design</li>
-                <li>UX Design</li>
-                <li>Web Development</li>
-                <li>Mobile Development</li>
+                <li>{ t('service-ui') }</li>
+                <li>{ t('service-ux') } </li>
+                <li> { t('service-web') } </li>
+                <li> { t('service-mobile') } </li>
             </ul>
         </div>
         {/*language=CSS*/}
@@ -44,6 +44,10 @@ const Services = ({ t }) => (
     </section>
 );
 
-const Extended = translate(['home'], {i18n, wait: process.browser})(Services);
+Services.propTypes = {
+    t: PropTypes.func
+};
+
+const Extended = translate(['home'], {i18n})(Services);
 
 export default Extended;

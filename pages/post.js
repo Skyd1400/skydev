@@ -1,5 +1,4 @@
 import React from 'react';
-import Head from 'next/head';
 import SkyHead from '../components/Head';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
@@ -10,12 +9,17 @@ import { Service } from '../config';
 const { FacebookShareButton } = ShareButtons;
 const FacebookIcon = generateShareIcon('facebook');
 
+import { translate } from 'react-i18next';
+import i18n from '../i18n';
+
 
 class Post extends React.Component {
     
     static async getInitialProps({req, query}) {
         let post = await Service.getPost(req, query.id);
-        return { post };
+        let props = { post };
+        if (req && !process.browser) Object.assign(props, i18n.getInitialProps(req, ['home', 'common']));
+        return props;
     }
     
     render() {
@@ -34,21 +38,21 @@ class Post extends React.Component {
                             dangerouslySetInnerHTML={{__html: this.props.post.content}}>
                         </div>
                         <ul className="post-tags">
-                            { (this.props.post.tags || []).map(tag => (
-                                <li>{ tag }</li>
+                            { (this.props.post.tags || []).map((tag, index) => (
+                                <li key={index}>{ tag }</li>
                             ))}
                         </ul>   
                         <hr/>
-                            <FacebookShareButton url={this.props.url.pathname+'?id='+this.props.url.query.id} quote={this.props.post.title} 
-                                                 picture={this.props.post.thumbnail}>
-                                <FacebookIcon size={32} round />
-                            </FacebookShareButton>
+                        <FacebookShareButton url={this.props.url.pathname+'?id='+this.props.url.query.id} quote={this.props.post.title} 
+                            picture={this.props.post.thumbnail}>
+                            <FacebookIcon size={32} round />
+                        </FacebookShareButton>
                         <hr />
                         {/*<ReactDisqusThread shortname="skydev-1" 
                                         identifier={ this.props.post.id } />*/}
                     </div>
                 </div>
-                <Footer/>
+                <Footer />
                 {/*language=CSS*/}
                 <style jsx>{`
                     .container {
@@ -128,8 +132,8 @@ class Post extends React.Component {
                     }
                 `}</style>
             </div>
-        )
+        );
     }
 }
 
-export default Post;
+export default translate(['common'], {i18n})(Post);

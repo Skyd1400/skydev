@@ -1,8 +1,13 @@
-const AboutMe = () => (
+import React from 'react';
+
+import { translate } from 'react-i18next';
+import i18n from '../../i18n';
+
+const AboutMe = ({ t }) => (
     <section className="root">
         <div className="container">
-            <h1 className="section-title">Who am I ?</h1>
-            <p>Hello, my name is <strong>Holy-Elie Scaïde</strong> and I'm your Website/App Designer and Developer</p>
+            <h1 className="section-title">{ t('about-title') }</h1>
+            <p dangerouslySetInnerHTML= {{ __html : t('about-text') }}></p>
         </div>
         {/*language=CSS*/}
         <style jsx>{`
@@ -17,4 +22,6 @@ const AboutMe = () => (
     </section>
 );
 
-export default AboutMe;
+const Extended = translate('home', {i18n})(AboutMe);
+
+export default Extended;
