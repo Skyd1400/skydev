@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { translate } from 'react-i18next';
 import i18n from '../i18n';
 
-import { FacebookUrl, GithubUrl} from "../config";
+import { FacebookUrl, GithubUrl} from '../config';
 
 const Footer = ({ t }) => (
     <footer>
