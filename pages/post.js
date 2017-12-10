@@ -43,8 +43,7 @@ class Post extends React.Component {
                             ))}
                         </ul>
                         <hr/>
-                        <FacebookShareButton url={this.props.url.pathname+'?id='+this.props.url.query.id} quote={this.props.post.title}
-                            picture={this.props.post.thumbnail}>
+                        <FacebookShareButton url={''}>
                             <FacebookIcon size={32} round />
                         </FacebookShareButton>
                         <hr />

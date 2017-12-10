@@ -41,7 +41,6 @@ export default {
         return Prismic.getApi(apiEndpoint, {req}).then(api => {
             return api.getByID(id);
         }).then (doc => {
-            console.log("article : ", doc.data.title);
             return new Promise(resolve => {
                 resolve ({
                     id: doc.id,
